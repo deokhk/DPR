@@ -23,7 +23,6 @@ import torch
 from omegaconf import DictConfig, OmegaConf
 from torch import Tensor as T
 from torch import nn
-from knockknock import slack_sender
 
 from dpr.models import init_biencoder_components
 from dpr.models.biencoder import BiEncoder, BiEncoderNllLoss, BiEncoderBatch
@@ -147,7 +146,7 @@ class BiEncoderTrainer(object):
             sampling_rates=sampling_rates if is_train_set else [1],
             rank=rank,
         )
-    @slack_sender(webhook_url="https://hooks.slack.com/services/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", channel="knock_knock")
+
     def run_train(self):
         cfg = self.cfg
 
