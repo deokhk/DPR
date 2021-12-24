@@ -31,3 +31,11 @@ webq_test:
 curatedtrec_test:
   _target_: dpr.data.retriever_data.CsvQASrc
   file: data.retriever.qas.curatedtrec-test
+
+nq_train_debug:
+  _target_: dpr.data.retriever_data.CsvQASrc
+  file: "/home/deokhk/research/MultiQA/model/DPR/dpr/downloads/data/retriever/nq-debug-train.json"
+
+nq_dev_debug:
+  _target_: dpr.data.retriever_data.CsvQASrc
+  file: "/home/deokhk/research/MultiQA/model/DPR/dpr/downloads/data/retriever/nq-debug-dev.json"
