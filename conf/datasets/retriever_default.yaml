@@ -8,9 +8,25 @@ nq_train:
   _target_: dpr.data.retriever_data.CsvQASrc
   file: data.retriever.qas.nq-train
 
+nq_train_with_table:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: "/home/deokhk/research/MultiQA/model/DPR/dpr/downloads/data/retriever/nq-train-text-table.json"
+
+nq_train_with_table_csv:
+  _target_: dpr.data.retriever_data.CsvQASrc
+  file: "/home/deokhk/research/MultiQA/model/DPR/downloads/data/retriever/qas/nq-train-text-table-without-special.csv"
+
 nq_dev:
   _target_: dpr.data.retriever_data.CsvQASrc
   file: data.retriever.qas.nq-dev
+
+nq_dev_with_table:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: "/home/deokhk/research/MultiQA/model/DPR/downloads/data/retriever/qas/nq-dev.csv"
+
+nq_dev_with_table_csv:
+  _target_: dpr.data.retriever_data.CsvQASrc
+  file: "/home/deokhk/research/MultiQA/model/DPR/downloads/data/retriever/qas/nq-dev-text-table-without-special.csv"
 
 trivia_test:
   _target_: dpr.data.retriever_data.CsvQASrc
@@ -31,11 +47,3 @@ webq_test:
 curatedtrec_test:
   _target_: dpr.data.retriever_data.CsvQASrc
   file: data.retriever.qas.curatedtrec-test
-
-nq_train_debug:
-  _target_: dpr.data.retriever_data.CsvQASrc
-  file: "/home/deokhk/research/MultiQA/model/DPR/dpr/downloads/data/retriever/nq-debug-train.json"
-
-nq_dev_debug:
-  _target_: dpr.data.retriever_data.CsvQASrc
-  file: "/home/deokhk/research/MultiQA/model/DPR/dpr/downloads/data/retriever/nq-debug-dev.json"
