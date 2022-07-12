@@ -39,7 +39,7 @@ def setup_for_distributed_mode(
     local_rank: int = -1,
     fp16: bool = False,
     fp16_opt_level: str = "O1",
-) -> (nn.Module, torch.optim.Optimizer):
+) ->(nn.Module, torch.optim.Optimizer):
     model.to(device)
     if fp16:
         try:

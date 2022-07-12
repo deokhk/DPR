@@ -4,19 +4,11 @@ nq_train:
   _target_: dpr.data.biencoder_data.JsonQADataset
   file: data.retriever.nq-train
 
-nq_train_with_table:
-  _target_: dpr.data.biencoder_data.JsonQADataset
-  file: "/home/deokhk/research/MultiQA/model/DPR/dpr/downloads/data/retriever/nq-train-text-table.json"
-
 nq_train_with_table_rel:
   _target_: dpr.data.biencoder_data.RelationalJsonQADataset
   file: "/home/deokhk/research/MultiQA/model/DPR/dpr/downloads/data/retriever/nq-train-text-table-fin.json"
   column_file_loc: "/home/deokhk/research/MultiQA/model/DPR/column_ids_list_without_special_token.pickle"
   row_file_loc: "/home/deokhk/research/MultiQA/model/DPR/row_ids_list_without_special_token.pickle"
-
-nq_train_with_table_fin:
-  _target_: dpr.data.biencoder_data.JsonQADataset
-  file: "/home/deokhk/research/MultiQA/model/DPR/dpr/downloads/data/retriever/nq-train-text-table-fin.json"
 
 nq_train_hn1:
   _target_: dpr.data.biencoder_data.JsonQADataset
@@ -26,19 +18,11 @@ nq_dev:
   _target_: dpr.data.biencoder_data.JsonQADataset
   file: data.retriever.nq-dev
 
-nq_dev_with_table:
-  _target_: dpr.data.biencoder_data.JsonQADataset
-  file: "/home/deokhk/research/MultiQA/model/DPR/dpr/downloads/data/retriever/nq-dev-text-table.json"
-
 nq_dev_with_table_rel:
   _target_: dpr.data.biencoder_data.RelationalJsonQADataset
   file: "/home/deokhk/research/MultiQA/model/DPR/dpr/downloads/data/retriever/nq-dev-text-table-fin.json"
   column_file_loc: "/home/deokhk/research/MultiQA/model/DPR/column_ids_list_without_special_token.pickle"
   row_file_loc: "/home/deokhk/research/MultiQA/model/DPR/row_ids_list_without_special_token.pickle"
-
-nq_dev_with_table_fin:
-  _target_: dpr.data.biencoder_data.JsonQADataset
-  file: "/home/deokhk/research/MultiQA/model/DPR/dpr/downloads/data/retriever/nq-dev-text-table-fin.json"
 
 trivia_train:
   _target_: dpr.data.biencoder_data.JsonQADataset
@@ -84,3 +68,27 @@ nq_debug_dev:
   file: "/home/deokhk/research/MultiQA/model/DPR/dpr/downloads/data/retriever/nq-debug-dev.json"
   column_file_loc: "/home/deokhk/research/MultiQA/model/DPR/column_ids_list_without_special_token.pickle"
   row_file_loc: "/home/deokhk/research/MultiQA/model/DPR/row_ids_list_without_special_token.pickle"
+
+nq_train_only_text:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: "/home/deokhk/research/MultiQA_data/retriever/plain/nq-train-text-without-special.json"
+
+nq_dev_only_text:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: "/home/deokhk/research/MultiQA_data/retriever/plain/nq-dev-text-without-special.json"
+
+nq_train_only_table:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: "/home/deokhk/research/MultiQA_data/retriever/plain/table_train_without_special_token.json"
+
+nq_dev_only_table:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: "/home/deokhk/research/MultiQA_data/retriever/plain/table_dev_without_special_token.json"
+
+nq_train_with_table:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: "/home/deokhk/research/MultiQA_data/retriever/plain/nq-train-text-table_without_special_token.json"
+
+nq_dev_with_table:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: "/home/deokhk/research/MultiQA_data/retriever/plain/nq-dev-text-table_without_special_token.json"

@@ -215,13 +215,15 @@ class BiEncoderTrainer(object):
                 validation_loss = self.validate_nll()
 
         if save_cp:
-            cp_name = self._save_checkpoint(scheduler, epoch, iteration)
-            logger.info("Saved checkpoint to %s", cp_name)
+            if epoch >= 20:
+                cp_name = self._save_checkpoint(scheduler, epoch, iteration)
+                logger.info("Saved checkpoint to %s", cp_name)
 
             if validation_loss < (self.best_validation_result or validation_loss + 1):
                 self.best_validation_result = validation_loss
-                self.best_cp_name = cp_name
-                logger.info("New Best validation checkpoint %s", cp_name)
+                if epoch>=20:
+                    self.best_cp_name = cp_name
+                    logger.info("New Best validation checkpoint %s", cp_name)
 
     def validate_nll(self) -> float:
         logger.info("NLL validation ...")
@@ -341,6 +343,8 @@ class BiEncoderTrainer(object):
                 num_other_negatives,
                 shuffle=False,
             )
+
+
             total_ctxs = len(ctx_represenations)
             ctxs_ids = biencoder_input.context_ids
             ctxs_segments = biencoder_input.ctx_segments

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH -J gen_embedding_chkpt # job name
+#SBATCH -J gen_emb_and_test_table # job name
 #SBATCH -o sbatch_output_log/output_%x_%j.out # standard output and error log
 #SBATCH -p A100 # queue name or partiton name
 #SBATCH -t 72:00:00 # Run time (hh:mm:ss)
@@ -8,7 +8,7 @@
 #SBATCH  --nodes=1
 #SBATCH  --ntasks=4
 #SBATCH  --cpus-per-task=4
-#SBATCH  --mem=400G
+#SBATCH  --mem=350G
 
 srun -l /bin/hostname
 srun -l /bin/pwd
@@ -18,6 +18,6 @@ module purge
 
 date
 
-sh gen_embedding_and_train_data_chkpt.sh
+sh gen_emb_and_test_total.sh
 
 date
