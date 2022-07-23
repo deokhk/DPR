@@ -148,3 +148,4 @@ cython_debug/
 sbatch_output_log/
 outputs/
 output_dir/
+trained_model_checkpoint/

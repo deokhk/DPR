@@ -1,14 +1,13 @@
 #!/bin/bash
 
-#SBATCH -J gen_emb_and_test_table # job name
+#SBATCH -J dpr_table_upsampled # job name
 #SBATCH -o sbatch_output_log/output_%x_%j.out # standard output and error log
-#SBATCH -p A100 # queue name or partiton name
+#SBATCH -p A5000 # queue name or partiton name
 #SBATCH -t 72:00:00 # Run time (hh:mm:ss)
-#SBATCH  --gres=gpu:1
+#SBATCH  --gres=gpu:4
 #SBATCH  --nodes=1
 #SBATCH  --ntasks=4
 #SBATCH  --cpus-per-task=4
-#SBATCH  --mem=350G
 
 srun -l /bin/hostname
 srun -l /bin/pwd
@@ -18,6 +17,6 @@ module purge
 
 date
 
-sh gen_emb_and_test_total.sh
+sh table_upsampled.sh
 
 date
